@@ -55,7 +55,7 @@ body {
 .controls {
   position: absolute;
   left: 8%;
-  bottom: 6%;
+  bottom: 10%;
   display: flex;
   gap: 10px;
   z-index: 3;
@@ -81,7 +81,12 @@ body {
 #lightOverlay {
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at center, rgba(255, 240, 200, 0.35), rgba(0,0,0,0) 60%);
+  background: radial-gradient(
+    circle at center,
+    rgba(255,255,255,0.35),
+    rgba(255,255,255,0.15),
+    rgba(0,0,0,0) 65%
+  );
   opacity: 0;
   pointer-events: none;
   z-index: 4;
@@ -89,13 +94,19 @@ body {
 
 #greeting {
   position: absolute;
-  top: 18%;
-  left: 50%;
-  transform: translateX(-50%);
+  top: 28%;
+  left: 51%;
+  transform: translateX(-50%) scale(0.95);
   font-family: 'Dancing Script', cursive;
-  font-size: 3rem;
-  color: #fff6dd;
-  text-shadow: 0 0 18px rgba(0,0,0,0.7);
+  font-size: 5rem;
+  color: #fffdf7;
+font-weight: 600;
+  /* LUMINA ALBA */
+  text-shadow:
+    0 0 8px rgba(255,255,255,0.6),
+    0 0 18px rgba(255,255,255,0.5),
+    0 0 35px rgba(255,255,255,0.35);
+
   opacity: 0;
   z-index: 5;
   pointer-events: none;
@@ -103,23 +114,31 @@ body {
 
 /* animation state */
 #lightOverlay.on {
-  animation: glow 2.2s ease-out forwards;
+  animation: lightFade 3s ease-in-out forwards;
 }
 
 #greeting.on {
-  animation: popIn 2.2s ease-out forwards;
+  animation: greetingFade 3s ease-out forwards;
 }
 
-@keyframes glow {
-  0% { opacity: 0; }
-  35% { opacity: 1; }
-  100% { opacity: 0.25; }
+@keyframes lightFade {
+  0%   { opacity: 0; }
+  40%  { opacity: 1; }
+  100% { opacity: 0.4; }
 }
 
-@keyframes popIn {
-  0% { opacity: 0; transform: translateX(-50%) translateY(-10px) scale(0.95); }
-  30% { opacity: 1; transform: translateX(-50%) translateY(0) scale(1); }
-  100% { opacity: 0.95; }
+@keyframes greetingFade {
+  0% {
+    opacity: 0;
+    transform: translateX(-50%) scale(0.92);
+  }
+  50% {
+    opacity: 1;
+    transform: translateX(-50%) scale(2);
+  }
+  100% {
+    opacity: 0.95;
+  }
 }
 
 /* mobile */
