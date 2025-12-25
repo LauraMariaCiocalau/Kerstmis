@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kom, Jezus</title>
+  <meta name="description" content="Kerstlied met sneeuwanimatie en achtergrondafbeelding." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <main class="hero" role="main" aria-label="Kerstlied">
+
+    <!-- Responsive background image (desktop vs mobile) -->
+    <picture class="bg" aria-hidden="true">
+      <source media="(max-width: 768px)" srcset="assets/Vino_Isuse.png">
+      <img src="assets/Vino_Isuse_1.png" alt="">
+    </picture>
+
+    <div class="overlay" aria-hidden="true"></div>
+
+    <!-- Snow animation -->
+    <canvas id="snow" aria-hidden="true"></canvas>
+
+    <!-- UI -->
+    <section class="content" aria-live="polite">
+      <p>Klik op afspelen om het kerstlied te beluisteren.</p>
+
+      <div class="controls">
+        <button id="playBtn" class="btn" type="button">▶ Kerstlied afspelen</button>
+        <button id="muteBtn" class="btn secondary" type="button" aria-pressed="false">🔊 Geluid</button>
+      </div>
+<div class="controls extra">
+  <button id="greetBtn" class="btn special" type="button">✨ Wens</button>
+</div>
+
+<div id="lightOverlay" class="light" aria-hidden="true"></div>
+<div id="greeting" class="greeting" data-text="Fijne feestdagen!">
+  Fijne feestdagen!
+</div>
+
+    </section>
+
+    <!-- Audio -->
+    <audio id="audio" preload="auto">
+      <source src="assets/Vino Isuse.mp3" type="audio/mp3" />
+      Je browser ondersteunt geen audio.
+    </audio>
+
+    <!-- Footer (optional) -->
+    <footer class="footer">
+      <span>©</span>
+    </footer>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+
+
