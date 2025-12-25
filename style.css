@@ -31,6 +31,7 @@ html, body { height: 100%; margin: 0; font-family: system-ui, -apple-system, Seg
   object-position: center 15%;
 }
 
+
 @media (max-width: 768px){
   .bg img{
     object-fit: contain;
