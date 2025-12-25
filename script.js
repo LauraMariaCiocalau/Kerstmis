@@ -9,6 +9,8 @@ function setPlayUI() {
   playBtn.textContent = playing ? "⏸ Pauze" : "▶ Kerstlied afspelen";
 }
 
+setPlayUI();
+
 playBtn.addEventListener("click", async () => {
   try {
     if (!playing) {
@@ -55,7 +57,6 @@ resizeCanvas();
 
 const flakes = [];
 const FLAKE_COUNT = 140;
-
 const rand = (min, max) => Math.random() * (max - min) + min;
 
 function initFlakes() {
@@ -71,7 +72,6 @@ function initFlakes() {
     });
   }
 }
-
 initFlakes();
 
 function tick() {
@@ -98,7 +98,6 @@ function tick() {
   ctx.globalAlpha = 1;
   requestAnimationFrame(tick);
 }
-
 tick();
 
 // ===== Greeting light + text =====
@@ -109,7 +108,6 @@ const greeting = document.getElementById("greeting");
 let greetingOn = false;
 
 greetBtn.addEventListener("click", () => {
-  // toggle on/off
   greetingOn = !greetingOn;
 
   if (greetingOn) {
@@ -123,7 +121,7 @@ greetBtn.addEventListener("click", () => {
     lightOverlay.classList.add("on");
     greeting.classList.add("on");
     greeting.setAttribute("aria-hidden", "false");
-    greetBtn.textContent = "✨ Verberg"; // "Ascunde"
+    greetBtn.textContent = "✨ Verberg";
   } else {
     lightOverlay.classList.remove("on");
     greeting.classList.remove("on");
@@ -131,3 +129,4 @@ greetBtn.addEventListener("click", () => {
     greetBtn.textContent = "✨ Wens";
   }
 });
+

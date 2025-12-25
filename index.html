@@ -1,62 +1,71 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="nl">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Kom, Jezus</title>
-  <meta name="description" content="Kerstlied met sneeuwanimatie en achtergrondafbeelding." />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kerstmis</title>
+
   <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
 </head>
 
 <body>
-  <main class="hero" role="main" aria-label="Kerstlied">
+  <div class="hero">
+    <!-- Achtergrond -->
+    <img src="assets/Vino_Isuse.jpeg" class="bg desktop" alt="Kerst achtergrond">
 
-    <!-- Responsive background image (desktop vs mobile) -->
-    <picture class="bg" aria-hidden="true">
-      <source media="(max-width: 768px)" srcset="assets/Vino_Isuse.png">
-      <img src="assets/Vino_Isuse_1.png" height="contain">
-    </picture>
-
-    <div class="overlay" aria-hidden="true"></div>
-
-    <!-- Snow animation -->
+    <!-- Sneeuw (canvas overlay) -->
     <canvas id="snow" aria-hidden="true"></canvas>
 
-    <!-- UI -->
-    <section class="content" aria-live="polite">
-      <p>Klik op afspelen om het kerstlied te beluisteren.</p>
+    <!-- Tekst -->
+    <div class="text">
+      <p><strong>Jezus,</strong> wanneer zilver in vlokken er dooit</p>
+      <p>En sneeuw bedekt de aarde,</p>
+      <p>Ik wil ook voor Je nog een lied zingen,</p>
+      <p>Er mee neervallen aan Jouw voeten.</p>
 
-      <div class="controls">
-        <button id="playBtn" class="btn" type="button">▶ Kerstlied afspelen</button>
-        <button id="muteBtn" class="btn secondary" type="button" aria-pressed="false">🔊 Geluid</button>
-      </div>
-<div class="controls extra">
-  <button id="greetBtn" class="btn special" type="button">✨ Wens</button>
-</div>
+      <br>
 
-<div id="lightOverlay" class="light" aria-hidden="true"></div>
-<div id="greeting" class="greeting" data-text="Fijne feestdagen!">
-  Fijne feestdagen!
-</div>
+      <p>Ik wil dat het van puur goud is</p>
+      <p>En met ademen van wierook,</p>
+      <p>Zoals vroeger ook de wijzen Je gaven</p>
+      <p>Het geschenk bekend door heel eeuwen.</p>
 
-    </section>
+      <br>
 
-    <!-- Audio -->
+      <p>Kom, Jezus, in mijn hart,</p>
+      <p>zoals in een arme stal,</p>
+      <p>en verwarm het met Jouw liefde,</p>
+      <p>Moge het een rein tempel worden.</p>
+    </div>
+
+    <!-- Controls -->
+    <div class="controls" role="group" aria-label="Kerst bediening">
+      <button id="playBtn" type="button">▶ Kerstlied afspelen</button>
+      <button id="muteBtn" type="button" aria-pressed="false">🔊 Geluid</button>
+      <button id="greetBtn" type="button">✨ Wens</button>
+    </div>
+
+    <!-- Audio (pas het src-pad aan naar je mp3) -->
     <audio id="audio" preload="auto">
-      <source src="assets/Vino Isuse.mp3" type="audio/mp3" />
+      <source src="assets/Vino Isuse.mp3" type="audio/mp3">
       Je browser ondersteunt geen audio.
     </audio>
 
-    <!-- Footer (optional) -->
-    <footer class="footer">
-      <span>©</span>
-    </footer>
-
-  </main>
+    <!-- Wens overlay -->
+    <div id="lightOverlay" aria-hidden="true"></div>
+    <div id="greeting" aria-hidden="true">
+      Fijne feestdagen! 🎄 ✨
+    </div>
+  </div>
 
   <script src="script.js"></script>
 </body>
 </html>
-
 
 
