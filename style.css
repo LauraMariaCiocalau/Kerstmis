@@ -124,7 +124,7 @@ font-weight: 600;
 @keyframes lightFade {
   0%   { opacity: 0; }
   40%  { opacity: 1; }
-  100% { opacity: 0.4; }
+  100% { opacity: 0.5; }
 }
 
 @keyframes greetingFade {
