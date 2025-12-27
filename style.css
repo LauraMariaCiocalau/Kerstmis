@@ -151,7 +151,7 @@ font-weight: 600;
   }
 
   .controls {
-    bottom: 10%;            /* urcă/coboară butoanele */
+    bottom: 15%;            /* urcă/coboară butoanele */
     left: 6%;
     right: 6%;
     flex-wrap: wrap;
